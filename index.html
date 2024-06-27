@@ -81,6 +81,7 @@
       const root = document.querySelector(":root");
 
       function change(e) {
+        console.log(this);
         if (
           e.srcElement.id === "base" ||
           e.srcElement.id === "spacing" ||
