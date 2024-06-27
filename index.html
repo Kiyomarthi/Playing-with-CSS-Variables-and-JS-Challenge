@@ -74,12 +74,19 @@
     </style>
 
     <script>
-      const spacing = document.getElementById("spacing");
       const root = document.querySelector(":root");
+      const spacing = document.getElementById("spacing");
+      const blur = document.getElementById("blur");
+
       function handleChangeSpace(e) {
         root.style.setProperty("--spacing", `${spacing.value}px`);
       }
       spacing.addEventListener("input", (e) => handleChangeSpace(e));
+
+      function handleChangeBlur(e) {
+        root.style.setProperty("--blur", `${blur.value}px`);
+      }
+      blur.addEventListener("input", (e) => handleChangeBlur(e));
     </script>
   </body>
 </html>
