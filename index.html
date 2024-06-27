@@ -40,6 +40,11 @@
     />
 
     <style>
+      :root {
+        --base: #ffc600;
+        --blur: 0px;
+        --spacing: 10px;
+      }
       /*
       misc styles, nothing to do with CSS variables
     */
@@ -60,8 +65,21 @@
       input {
         width: 100px;
       }
+
+      img {
+        padding: var(--spacing);
+        background: var(--base);
+        filter: blur(var(--blur));
+      }
     </style>
 
-    <script></script>
+    <script>
+      const spacing = document.getElementById("spacing");
+      const root = document.querySelector(":root");
+      function handleChangeSpace(e) {
+        root.style.setProperty("--spacing", `${spacing.value}px`);
+      }
+      spacing.addEventListener("input", (e) => handleChangeSpace(e));
+    </script>
   </body>
 </html>
